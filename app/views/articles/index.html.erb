@@ -1,0 +1,13 @@
+<div class="navbar">
+  <h1>Wikinimous - Arabella's version</h1>
+  <a href="#"><h2><%= link_to "New article", new_article_path %></h2></a>
+</div>
+
+<div class="article"><ul>
+  <% @articles.each do |article| %>
+    <li><h2><%= article.title %> <%= link_to "", article_path(article) %></h2></li>
+    <li><a href="#"><%= link_to "", article_path(article) %> </a></li>
+    <li><a href="#"><%= link_to "Delete", article_path(article), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></a> </li>
+  <% end %>
+</ul>
+</div>
